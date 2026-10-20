@@ -11,6 +11,8 @@ from app.db import User, get_user_db
 load_dotenv()
 
 SECRET = os.getenv("JWT_SECRET")
+if not SECRET:
+    raise RuntimeError("JWT_SECRET is missing from .env")
 
 class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
     reset_password_token_secret = SECRET

@@ -8,4 +8,12 @@
 
 # Python cache
 __pycache__/
-*.py[cod]git
+*.py[cod]
+
+# Local database files
+*.db
+*.db.backup
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
